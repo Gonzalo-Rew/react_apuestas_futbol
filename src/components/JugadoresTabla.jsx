@@ -35,30 +35,40 @@ export default class JugadoresTabla extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Jugadores Component</h1>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Imagen</th>
-              <th>Nombre</th>
-              <th>Posición</th>
-              <th>Edad</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Array.from(this.state.jugadores).map((jugador, index) => (
-              <tr key={index}>
-                <td>
-                  <img src={jugador.imagen} alt={jugador.nombre} />
-                </td>
-                <td>{jugador.nombre}</td>
-                <td>{jugador.posicion}</td>
-                <td>{jugador.edad}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="card border-0 shadow-sm">
+        <div className="card-body p-4">
+          <h2 className="h4 mb-4">Jugadores encontrados</h2>
+          <div className="table-responsive">
+            <table className="table table-striped table-hover align-middle mb-0">
+              <thead className="table-primary">
+                <tr>
+                  <th>Imagen</th>
+                  <th>Nombre</th>
+                  <th>Posición</th>
+                  <th>Edad</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Array.from(this.state.jugadores).map((jugador, index) => (
+                  <tr key={index}>
+                    <td>
+                      <img
+                        className="rounded-circle object-fit-cover"
+                        width="56"
+                        height="56"
+                        src={jugador.imagen}
+                        alt={jugador.nombre}
+                      />
+                    </td>
+                    <td className="fw-semibold">{jugador.nombre}</td>
+                    <td>{jugador.posicion}</td>
+                    <td>{jugador.edad}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     );
   }

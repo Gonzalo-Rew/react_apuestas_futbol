@@ -30,10 +30,11 @@ export default class CrearApuesta extends Component {
       return <Navigate to="/apuestas" />;
     } else {
       return (
-        <div>
-          <h1>Crear Apuesta</h1>
-          <form onSubmit={this.crearApuesta}>
-            <div className="mb-3">
+        <div className="card border-0 shadow-sm">
+          <div className="card-body p-4 p-md-5">
+            <h1 className="h2 mb-4">Crear Apuesta</h1>
+            <form onSubmit={this.crearApuesta} className="row g-3">
+              <div className="col-12">
               <label
                 htmlFor="usuario"
                 ref={this.inputUsuario}
@@ -47,6 +48,8 @@ export default class CrearApuesta extends Component {
                 className="form-control"
                 id="usuario"
               />
+              </div>
+              <div className="col-md-6">
               <label htmlFor="resultado" className="form-label">
                 FC Barcelona
               </label>
@@ -56,6 +59,8 @@ export default class CrearApuesta extends Component {
                 className="form-control"
                 id="resultado1"
               />
+              </div>
+              <div className="col-md-6">
               <label htmlFor="resultado" className="form-label">
                 Real Madrid
               </label>
@@ -65,6 +70,8 @@ export default class CrearApuesta extends Component {
                 className="form-control"
                 id="resultado2"
               />
+              </div>
+              <div className="col-md-6">
               <label htmlFor="fecha" className="form-label">
                 Fecha
               </label>
@@ -74,11 +81,14 @@ export default class CrearApuesta extends Component {
                 className="form-control"
                 id="fecha"
               />
-            </div>
-            <button type="submit" className="btn btn-primary">
-              Crear Apuesta
-            </button>
-          </form>
+              </div>
+              <div className="col-12">
+                <button type="submit" className="btn btn-primary">
+                  Crear Apuesta
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       );
     }

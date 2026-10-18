@@ -21,26 +21,37 @@ export default class DetallesJugador extends Component {
 
   render() {
     if (this.state.isLoading) {
-      return <p>Cargando detalles del jugador...</p>;
+      return <p className="alert alert-info">Cargando detalles del jugador...</p>;
     } else if (this.state.jugador === null) {
-      return <p>No se encontró el jugador.</p>;
+      return <p className="alert alert-warning">No se encontró el jugador.</p>;
     } else {
       return (
-        <div>
-          <div>
-            <h1>{this.state.jugador.nombre}</h1>
-            <img
-              src={this.state.jugador.imagen}
-              alt={this.state.jugador.nombre}
-            ></img>
-            <p>Posición: {this.state.jugador.posicion}</p>
-            <p>Fecha Nacimiento: {this.state.jugador.fechaNacimiento}</p>
-            <p>País: {this.state.jugador.pais}</p>
+        <div className="card border-0 shadow-sm">
+          <div className="card-body p-4 p-md-5">
+            <div className="d-flex flex-column flex-md-row align-items-center align-items-md-start gap-4">
+              <img
+                className="img-fluid rounded shadow-sm"
+                width="220"
+                src={this.state.jugador.imagen}
+                alt={this.state.jugador.nombre}
+              />
+              <div>
+                <h1 className="display-6 fw-bold">{this.state.jugador.nombre}</h1>
+                <dl className="row mb-0">
+                  <dt className="col-sm-5">Posición</dt>
+                  <dd className="col-sm-7">{this.state.jugador.posicion}</dd>
+                  <dt className="col-sm-5">Fecha Nacimiento</dt>
+                  <dd className="col-sm-7">{this.state.jugador.fechaNacimiento}</dd>
+                  <dt className="col-sm-5">País</dt>
+                  <dd className="col-sm-7">{this.state.jugador.pais}</dd>
+                </dl>
+              </div>
+            </div>
           </div>
-          <div>
+          <div className="card-footer bg-transparent border-0 px-4 pb-4">
             <NavLink
               to={`/home/${this.props.idEquipo}/jugadores`}
-              className="btn btn-secondary"
+              className="btn btn-outline-secondary"
             >
               Jugadores
             </NavLink>

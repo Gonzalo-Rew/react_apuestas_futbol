@@ -20,30 +20,32 @@ export default class Menu extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <NavLink className="navbar-brand" to="/">
-          <img
-            src={ChampionsLogo}
-            alt="Logo"
-            width="80px"
-            height="50px"
-            className="d-inline-block align-top"
-          />
-        </NavLink>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div className="container">
+          <NavLink className="navbar-brand d-flex align-items-center fw-semibold" to="/">
+            <img
+              src={ChampionsLogo}
+              alt="Logo"
+              width="80px"
+              height="50px"
+              className="d-inline-block align-top me-2"
+            />
+            Apuestas Fútbol
+          </NavLink>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item active">
               <NavLink className="nav-link" to="/">
                 Home <span className="visually-hidden">(current)</span>
@@ -82,7 +84,8 @@ export default class Menu extends Component {
                 ))}
               </div>
             </li>
-          </ul>
+            </ul>
+          </div>
         </div>
       </nav>
     );

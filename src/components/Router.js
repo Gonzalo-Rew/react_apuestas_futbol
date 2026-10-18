@@ -28,7 +28,7 @@ export default class Router extends Component {
     return (
       <BrowserRouter>
         <Menu />
-        <main>
+        <main className="container py-4">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home/:idEquipo" element={<HomeElement />} />
